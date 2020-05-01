@@ -63,23 +63,32 @@ $btn2.onclick = getResult2;
 
 3.3
 
-// let $title2 = document.createElement("h1");
-// $title2.innerHTML =
-//   "Запросить у пользователя число и вывести все делители этого числа.";
-// document.body.append($title2);
+let $title3 = document.createElement("h1");
+$title3.innerHTML =
+  "Запросить у пользователя число и вывести все делители этого числа.";
+document.body.append($title3);
 
-// let $task2 = document.createElement("div");
-// $task2.classList.add("task2");
-// $task2.innerHTML =
-//   '<input class="input_3" placeholder="your number" type="number"></input><button>calculate</button>';
-// document.body.append($task2);
-// let $btn2 = $task2.querySelector("button");
-// let $result2 = document.createElement("div");
-// $result2.innerHTML = "<h1></h1>";
-// $result2.style = "font-size: 40px";
-// document.body.append($result2);
+let $task3 = document.createElement("div");
+$task3.classList.add("task3");
+$task3.innerHTML =
+  '<input class="input_3" placeholder="your number" type="number"></input><button>calculate</button>';
+document.body.append($task3);
+let $btn3 = $task3.querySelector("button");
+let $result3 = document.createElement("div");
+$result3.innerHTML = "<h1></h1>";
+$result3.style = "font-size: 40px";
+document.body.append($result3);
 
-// let getResult2 = () => {
+let getResult3 = () => {
+ let num = Number ($task3.querySelector(".input_3").value)
+let divisors = 'hello'
 
+ for (let i = 1; i <= Math.round(num / 2); i++)
+        if (!(num % i)) divisors += i + ', '
 
+        $result3.innerHTML = `divisors of this number ${divisors}`;
+
+}
+
+$btn3.onclick = getResult3;
 
