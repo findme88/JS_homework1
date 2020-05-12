@@ -198,3 +198,52 @@ $btn6_24.addEventListener('click', () => average())
 let $title6_3 = document.createElement("h2");
 $title6_3.innerHTML = `3. Создать массив CSS-стилей (цвет, размер шрифта, выравнивание, подчеркивание и т. д.). <br>Каждый элемент массива – это объект, состоящий из двух свойств:<br> название стиля и значение стиля. <br>Написать функцию, которая принимает массив стилей и текст, и выводит этот текст с помощью document.write() в тегах <p> </p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.`;
 document.body.append($title6_3);
+
+let style = [
+  {
+      name: 'color',
+      value: 'red'
+  }, {
+      name: 'font-size',
+      value: '20px'
+  }, {
+      name: 'text-align',
+      value: 'center'
+  }, {
+      name: 'text-decoration',
+      value: 'underline'
+  }, {
+      name: 'text-transform',
+      value: 'uppercase'
+  }, {
+      name: 'letter-spacing',
+      value: '2px'
+  }, {
+      name: 'line-height',
+      value: '40px'
+  }
+]
+
+let $task6_31 = document.createElement("div");
+$task6_31.innerHTML =
+  '<input class="input6_31" placeholder="text" type="text"></input><button class = "button6_31">press</button>';
+document.body.append($task6_31);
+let $btn6_31 = $task6_31.querySelector(".button6_31");
+
+let textStyle = (arr, text) => {
+  let styles = ''
+  for (let i = 0; i < arr.length; i++) styles += arr[i].name + ':' + arr[i].value + '; '
+  document.write(`<p style="${styles}">${text}</p>`)
+}
+
+$btn6_31.addEventListener('click', () => textStyle(style, $task6_31.querySelector(".input6_31").value))
+
+6.4
+let $title6_4 = document.createElement("h2");
+$title6_4.innerHTML = `4. Создать массив аудиторий академии. Объект-аудитория состоит из названия, количества посадочных мест (от 10 до 20) и названия факультета, для которого она предназначена. Написать несколько функций для работы с ним <br>
+Вывод на экран всех аудиторий;<br>
+Вывод на экран аудиторий для указанного факультета;<br>
+Вывод на экран только тех аудиторий, которые подходят для переданной группы. Объект-группа состоит из названия, количества студентов и названия факультета;<br>
+Функция сортировки аудиторий по количеству мест;<br>
+Функция сортировки аудиторий по названию (по алфавиту).`;
+document.body.append($title6_4);
