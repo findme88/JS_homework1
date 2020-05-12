@@ -364,9 +364,15 @@ let $task6_42 = document.createElement("div");
 $task6_42.innerHTML =
   '<input class="input6_43" placeholder="name" type="text"><input class="input6_44" placeholder="seats" type="text"><input class="input6_45" placeholder="department" type="text"></input><button class = "button6_43">press</button>';
 document.body.append($task6_42);
+let $task6_43 = document.createElement("div");
+$task6_43.innerHTML =
+  '<button class = "button6_44">Sort by seats</button><button class = "button6_45">Sort by name</button>';
+document.body.append($task6_43);
 let $btn6_41 = $task6_41.querySelector(".button6_41");
 let $btn6_42 = $task6_41.querySelector(".button6_42");
 let $btn6_43 = $task6_42.querySelector(".button6_43");
+let $btn6_44 = $task6_43.querySelector(".button6_44");
+let $btn6_45 = $task6_43.querySelector(".button6_45");
 let $result6_4 = document.createElement("div");
 $result6_4 = document.createElement("h1");
 $result6_4.style = "font-size: 20px";
@@ -397,4 +403,17 @@ let sort = (name, seats, department) => {
 
 $btn6_43.addEventListener('click', () => sort($task6_42.querySelector(".input6_43").value, $task6_42.querySelector(".input6_44").value, $task6_42.querySelector(".input6_45").value))
 
+let sortSeat = (arr) => {
+  arr.sort((a, b) => a.seats > b.seats ? 1 : -1);
+  showInfo()
+}
 
+
+$btn6_44.addEventListener('click', () => sortSeat (classroom))
+
+let sortName = (arr) => {
+  arr.sort((a, b) => a.name > b.name ? 1 : -1);
+  showInfo()
+}
+
+$btn6_45.addEventListener('click', () => sortName (classroom))
